@@ -1,0 +1,205 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif
+}
+
+body {
+    background-image: linear-gradient(
+        43deg,
+        rgb(53, 176, 197) 0%,
+        #4f45a8 46%,
+        #1e2adb 100%
+    );
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.clock {
+    width: 500px;
+    height: 500px;
+    background-color: rgba( 255, 255, 255, 0.8);
+    border-radius: 50%;
+    border: 2px solid black;
+    position: relative;
+    text-align: center;
+}
+
+.number {
+    --rotation : 0;
+
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    text-align: center;
+    transform: rotate(var(--rotation));
+    font-size: 1.8rem;
+    font-weight: 500;
+    padding: 10px;
+}
+
+.number-1 {
+    --rotation: 30deg;
+}
+.number-2 {
+    --rotation: 60deg;
+}
+.number-3 {
+    --rotation: 90deg;
+}
+.number-4 {
+    --rotation: 120deg;
+}
+.number-5 {
+    --rotation: 150deg;
+}
+.number-6 {
+    --rotation: 180deg;
+}
+.number-7 {
+    --rotation: 210deg;
+}
+.number-8 {
+    --rotation: 240deg;
+}
+.number-9 {
+    --rotation: 270deg;
+}
+.number-10 {
+    --rotation: 300deg;
+}
+.number-11 {
+    --rotation: 330deg;
+}
+.number-12 {
+    --rotation: 360deg;
+}
+
+.clock::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    z-index: 11;
+    background-color: black;
+    transform: translate(-50%, -50%);
+}
+
+.clock .hand {
+    --rotation: 0;
+
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    width: 10px;
+    height: 40%;
+    background-color: black;
+    z-index: 10;
+    transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
+    transform-origin: bottom;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.clock .hand.seconds {
+    width: 3px ;
+    height: 40% ;
+    background-color: red ;
+}
+.clock .hand.minutes  {
+    width: 3px ; 
+    height: 35% ;
+    background-color: black;
+}
+
+.clock .hand.hours {
+    width: 6px ;
+    height: 18% ;
+    background-color: black;
+}
+
+.btn-div {
+    margin-top: 40px;
+}
+
+/* RELOGIO DIGITAL */
+
+.digital-clock {
+    width: 700px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: rgb(89, 109, 196);
+    box-shadow: black;
+    gap: 60px;
+    font-size: 60px;
+    color: white;
+    background: transparent;
+    border-radius: 20px;
+    box-shadow: 0px 8px 10px rgba(0,0,0, .5);
+}
+
+.span {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 5px 5px 15px rgba(0,0,0, .5);
+}
+
+.span-hours  {
+    width: 320px;
+    height: 180px;
+    background-color: black;
+    border-radius: 20px;
+}
+
+.span-minutes {
+    width: 320px;
+    height: 180px;
+    background-color: black;
+    border-radius: 20px;
+}
+
+.span-seconds {
+    width: 320px;
+    height: 180px;
+    background-color: black;
+    border-radius: 20px;
+}
+
+.temp {
+    font-size: 20px;
+}
+
+.btn {
+    color: white;
+    width: 300px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, .7);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, .5)
+}
+
+.btn:hover {
+    cursor: pointer;
+}
+
+.clock, .digital-clock {
+    transition: opacity 0.5s ease-in-out;
+  }
+
+.hidden {
+    display: none;
+}
